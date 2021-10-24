@@ -99,9 +99,13 @@ padding: 8px 20px;
   <tr>
   <td>{{$item -> created_at}}</td>
   <td><input type="text" class="list-udate" value="{{$item -> content}}" name=content></td>
-  
-  <td><input type="submit" value="更新" class="update-btn"></td>
+  <form action="/todo/update" methot="POST">
+  <td><input type="submit" value="更新" class="update-btn"></td></form>
+<form action="/todo/delete" method="POST">
   <td><input type="submit" value="削除" class="delete-btn"></td>
+  </form>
+  
+
 
   </tr>
 @endforeach
