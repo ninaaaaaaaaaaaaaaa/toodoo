@@ -88,8 +88,9 @@ padding: 8px 20px;
    <h1>TodoList</h1>
    <div class="todoo">
    <div class="toodo">
-  <form  action="/todo/create" methot="POST">
-  <input type="text" name="todo" class="create">
+  <form  action="/todo/create" method="POST">
+  @csrf
+  <input type="text" name="content" class="create">
   <input type="submit" value="追加" class="create-btn"></form>
    </div>
  
@@ -98,13 +99,17 @@ padding: 8px 20px;
  @foreach($items as $item)
   <tr>
   <td>{{$item -> created_at}}</td>
-  <td><input type="text" class="list-udate" value="{{$item -> content}}" name=content></td>
-  <form action="/todo/update" methot="POST">
-  <td><input type="submit" value="更新" class="update-btn"></td></form>
+  <td><form action="/todo/update" method="POST">
+  @csrf
+  <input type="text" name="content" class="list-udate" value="{{$item -> content}}"></td>
+  
+  <td><input type="submit"  value="更新" class="update-btn"></form></td>
+  
 <form action="/todo/delete" method="POST">
+@csrf
   <td><input type="submit" value="削除" class="delete-btn"></td>
   </form>
-  
+
 
 
   </tr>
