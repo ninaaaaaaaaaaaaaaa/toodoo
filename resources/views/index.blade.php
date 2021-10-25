@@ -99,13 +99,18 @@ padding: 8px 20px;
  @foreach($items as $item)
   <tr>
   <td>{{$item -> created_at}}</td>
-  <td><form action="/todo/update" method="POST">
-  @csrf
-  <input type="text" name="content" class="list-udate" value="{{$item -> content}}"></td>
+  <form action="/todo/update" method="POST">
   
-  <td><input type="submit"  value="更新" class="update-btn"></form></td>
+  
+  <td><input type="text" name="content" class="list-udate" value="{{$item -> content}}"></td>
+  <td>
+  <input type="submit"  value="更新" class="update-btn">
+  <input type="hidden" name="id" value="{{$item->id}}">
+  @csrf
+  </form></td>
   
 <form action="/todo/delete" method="POST">
+<input type="hidden" name="id"  value="{{$item->id}}">
 @csrf
   <td><input type="submit" value="削除" class="delete-btn"></td>
   </form>
