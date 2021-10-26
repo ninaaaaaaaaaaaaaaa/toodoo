@@ -51,6 +51,12 @@ h1{
   border: 2px solid;
   font-weight: bold;
   margin-left:40px;
+  cursor: pointer;
+}
+.create-btn:hover{
+  background-color:#f360eb;
+  boder-color:#f360eb;
+  color:#fff;
 }
 
 th,td{
@@ -71,6 +77,12 @@ th,td{
   border-radius: 9px;
   border: 2px solid;
   font-weight: bold;
+  cursor: pointer;
+}
+.update-btn:hover{
+  background-color:orange;
+  boder-color:orange;
+  color:#fff;
 }
 .delete-btn{
 padding: 8px 20px;
@@ -80,6 +92,12 @@ padding: 8px 20px;
   border-radius: 9px;
   border: 2px solid;
   font-weight: bold;
+  cursor: pointer;
+}
+.delete-btn:hover{
+  border-color:#70e8cf;
+  background-color:#70e8cf;
+  color:#fff;
 }
 </style>
 <body>
