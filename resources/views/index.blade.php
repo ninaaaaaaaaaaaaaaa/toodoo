@@ -104,11 +104,19 @@ padding: 8px 20px;
   <div class="todo">
    <div class="card">
    <h1>TodoList</h1>
+   
    <div class="todoo">
    <div class="toodo">
   <form  action="/todo/create" method="POST">
   @csrf
-  <input type="text" name="content" class="create">
+  @if(count($errors)>0)
+  <ul>
+  @foreach($errors -> all() as $error)
+  <li>{{$error}}</li>
+  @endforeach
+  </ul>
+  @endif
+  <input type="text"  name="content" class="create"　>
   <input type="submit" value="追加" class="create-btn"></form>
    </div>
  
@@ -121,6 +129,7 @@ padding: 8px 20px;
   
   
   <td><input type="text" name="content" class="list-udate" value="{{$item -> content}}"></td>
+  
   <td>
   <input type="submit"  value="更新" class="update-btn">
   <input type="hidden" name="id" value="{{$item->id}}">
